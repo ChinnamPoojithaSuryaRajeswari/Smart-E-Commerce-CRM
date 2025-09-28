@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Order Tracking" icon-name="standard:order">
+        <template if:true={trackingData}>
+            <div class="slds-p-around_medium">
+                <template for:each={trackingData} for:item="item">
+                    <div key={item.Id} class="slds-box slds-m-bottom_small slds-theme_default">
+                        <p><strong>Status:</strong> {item.Status__c}</p>
+                        <p><strong>Date:</strong> {item.Update_Date__c}</p>
+                        <p><strong>Notes:</strong> {item.Notes__c}</p>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-around_medium">{error}</p>
+        </template>
+    </lightning-card>
+</template>

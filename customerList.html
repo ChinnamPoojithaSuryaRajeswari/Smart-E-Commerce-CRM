@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Customer Details" icon-name="standard:contact">
+        <template if:true={customers}>
+            <lightning-datatable
+                key-field="id"
+                data={customers}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>

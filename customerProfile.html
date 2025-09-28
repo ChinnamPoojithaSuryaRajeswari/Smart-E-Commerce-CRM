@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Customer Profile" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <p><strong>Loyalty Points:</strong> {loyaltyPoints}</p>
+
+            <template if:true={orders}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={orders}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
